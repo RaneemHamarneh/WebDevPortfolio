@@ -15,7 +15,7 @@
 - **Frameworks**: Django, Django REST Framework, Bootstrap
 - **Databases**: PostgreSQL, SQLite
 - **Tools**: Git & GitHub, VS Code, Postman, Excel
-- **Others**: Power BI, APIs, Basic Cloud (Heroku deployment)
+- **Others**: Power BI, APIs
 
 ---
 
@@ -32,12 +32,13 @@ A Django-based web app for [brief description].
 ### 📊 [Project Name 2]
 Data-driven dashboard using Power BI connected to SQL backend.  
 **Key Features**: Dynamic filters, visual storytelling, KPIs.  
-➡️ [Link or Demo](#)
+>>> in progress
 
 ---
 
 ### 🔒 [Project Name 3]
 Simple authentication system with Django — login, register, and role-based access.  
+>>> in progress
 ➡️ [GitHub Repo](#)
 
 ---
@@ -62,9 +63,9 @@ Simple authentication system with Django — login, register, and role-based acc
 
 ## 📫 How to Reach Me
 
-- 📧 Email: your.email@example.com  
-- 💼 LinkedIn: [linkedin.com/in/yourname](#)  
-- 🐙 GitHub: [github.com/yourusername](#)
+- 📧 Email: raneem99hamarneh@yahoo.com
+- 💼 LinkedIn: https://www.linkedin.com/in/raneem-alhamarneh/ 
+- 🐙 GitHub: https://github.com/RaneemHamarneh
 
 ---
 

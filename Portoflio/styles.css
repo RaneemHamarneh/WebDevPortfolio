@@ -26,22 +26,92 @@ body {
     margin-inline: auto
 }
 
+/* ---------- Top navbar (separate from hero) ---------- */
+.site-header {
+    border-bottom: 1px solid #1d2646;
+    background: #0a132a;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+}
+
+.brand {
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text);
+    color: #081227;
+    background: var(--brand);
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.menu {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.menu a.active,
+.menu a:hover {
+    color: #081227;
+    background: var(--brand);
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* centers horizontally */
+    text-align: center;
+    /* centers text inside */
+    padding: 72px 0;
+    flex-direction: column;
+    /* stack items vertically */
+}
+
+.header h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    margin: 0;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin: .25rem 0 1rem;
+}
+
+/* ---------- Hero (was .header) ---------- */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 72px 0
+    padding: 72px 0;
 }
 
 .header h1 {
     font-size: clamp(28px, 5vw, 44px);
-    margin: 0
+    margin: 0;
 }
 
 .subtitle {
     color: var(--muted);
-    margin: .25rem 0 1rem
+    margin: .25rem 0 1rem;
 }
 
 .actions {
@@ -49,6 +119,7 @@ body {
     gap: 12px
 }
 
+/* buttons */
 .btn {
     display: inline-block;
     padding: 10px 16px;
@@ -57,32 +128,69 @@ body {
     color: #081227;
     text-decoration: none;
     font-weight: 700;
-    box-shadow: 0 8px 24px rgba(96, 165, 250, .25)
+    box-shadow: 0 8px 24px rgba(96, 165, 250, .25);
 }
 
 .btn.ghost {
     background: transparent;
     color: var(--text);
-    outline: 1px solid #2b3554
+    outline: 1px solid #2b3554;
 }
 
 .btn.small {
     padding: 8px 12px;
     border-radius: 10px;
+    font-weight: 600;
+}
+
+/* contact block */
+.contact {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 28px 0;
+}
+
+.contact .col {
+    flex: 1 1 320px
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.form .row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+label {
     font-weight: 600
 }
 
-/* .avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #1e293b
-} */
+input,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid #263253;
+    background: #0c1733;
+    color: var(--text);
+}
 
+input::placeholder,
+textarea::placeholder {
+    color: #8aa0c0
+}
+
+/* sections & cards */
 h2 {
     font-size: clamp(22px, 3.6vw, 28px);
-    margin: 18px 0 10px
+    margin: 18px 0 10px;
 }
 
 #about p {
@@ -96,7 +204,7 @@ h2 {
     list-style: none;
     gap: 10px;
     padding: 0;
-    margin: 12px 0
+    margin: 12px 0;
 }
 
 .chips li {
@@ -105,14 +213,14 @@ h2 {
     border: 1px solid #1f2a48;
     color: #cbd5e1;
     border-radius: 999px;
-    font-size: 14px
+    font-size: 14px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 16px;
-    margin-top: 12px
+    margin-top: 12px;
 }
 
 .card {
@@ -120,7 +228,7 @@ h2 {
     border: 1px solid #1c2744;
     padding: 16px;
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .25)
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
 }
 
 .card h3 {
@@ -138,20 +246,18 @@ h2 {
     margin: 8px 0 12px
 }
 
+/* footer */
 .footer {
     padding: 28px 0 60px;
     color: var(--muted);
-    text-align: center
+    text-align: center;
 }
 
+/* responsive */
 @media (max-width:720px) {
     .header {
         padding: 40px 0;
         flex-direction: column;
-        align-items: flex-start
+        align-items: flex-start;
     }
-
-    /* .avatar {
-        align-self: flex-start
-    } */
 }

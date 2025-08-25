@@ -12,35 +12,36 @@
 </head>
 
 <body>
-    <header class="container header">
+
+    <!-- Navbar section (sticky top) -->
+    <header class="site-header">
         <div class="container nav">
-            <a class="brand" href="index.html">MySite</a>
-            <nav class="menu">
+            <nav class="menu" aria-label="Primary">
                 <a class="active" href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html">Contact Page</a>
+                <a href="#projects">View Projects</a>
+                <a href="mailto:raneem99hamarneh@yahoo.com">My Email</a>
             </nav>
         </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="container header">
         <div>
             <h1>Raneem AlHamarneh</h1>
-            <p class="subtitle"> Web Development · Python · Django</p>
-            <div class="actions">
-                <a class="btn" href="#projects">View Projects</a>
-                <a class="btn ghost" href="mailto:raneem99hamarneh@yahoo.com">Contact Me</a>
-            </div>
+            <p class="subtitle">Web Development · Python · Django</p>
         </div>
         <!-- <img src="assets/avatar.jpg" alt="Raneem" class="avatar" onerror="this.style.display='none'"> -->
-    </header>
+    </section>
 
     <main>
         <section class="container" id="about">
             <h2>About</h2>
             <p>
-                I'm Raneem — a Python/Django web developer with a background in mathematics and a growing passion for
-                backend development and data. I enjoy building efficient,
-                problem-solving web apps and constantly learning new tools to improve my craft.
-                I thrive at the intersection of logic,
-                creativity, and impact.
+                I'm Raneem — a Python/Django web developer with a background in mathematics and a growing passion
+                for backend development and data. I enjoy building efficient, problem‑solving web apps and constantly
+                learning new tools to improve my craft. I thrive at the intersection of logic, creativity, and impact.
             </p>
             <div>
                 <p>🐍 <strong>Python/Django Developer</strong> focused on clean, scalable backend systems.</p>
@@ -79,12 +80,6 @@
                     <a class="btn small" target="_blank" href="#">Source</a>
                 </article>
             </div>
-        </section>
-
-        <section class="container" id="contact">
-            <h2>Contact</h2>
-            <p>Want to collaborate? Email me:</p>
-            <a class="btn" href="mailto:raneem99hamarneh@yahoo.com">raneemEmail</a>
         </section>
     </main>
 

@@ -1,3 +1,4 @@
+/* 1) Tokens / Colors / Typography */
 :root {
     --bg: #0f172a;
     --panel: #0b1225;
@@ -6,33 +7,62 @@
     --brand: #60a5fa;
     --accent: #22d3ee;
     --card: #111c37;
+
+    --radius: 16px;
+    --radius-pill: 999px;
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, .25);
+    --shadow-brand: 0 8px 24px rgba(96, 165, 250, .25);
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
 body {
     margin: 0;
     padding: 0;
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
     background: linear-gradient(180deg, var(--bg), #090f1f 30%, #0a1226);
-    color: var(--text)
 }
 
+/* 2) Elements / Base */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+}
+
+/* 3) Layout Utilities */
 .container {
     width: min(1100px, 92%);
-    margin-inline: auto
+    margin-inline: auto;
 }
 
-/* ---------- Top navbar (separate from hero) ---------- */
+.section {
+    padding: 28px 0;
+}
+
+/* 4) Top Navigation (sticky) */
 .site-header {
-    border-bottom: 1px solid #1d2646;
-    background: #0a132a;
     position: sticky;
     top: 0;
     z-index: 10;
+    background: #0a132a;
+    border-bottom: 1px solid #1d2646;
 }
 
 .nav {
@@ -45,12 +75,10 @@ body {
 
 .brand {
     font-weight: 800;
-    text-decoration: none;
-    color: var(--text);
-    color: #081227;
-    background: var(--brand);
     padding: 8px 10px;
     border-radius: 10px;
+    background: var(--brand);
+    color: #081227;
 }
 
 .menu {
@@ -60,81 +88,83 @@ body {
 }
 
 .menu a {
-    color: var(--muted);
-    text-decoration: none;
     padding: 8px 10px;
     border-radius: 10px;
+    color: var(--muted);
+    transition: background .15s ease, color .15s ease, transform .05s ease;
 }
 
-.menu a.active,
-.menu a:hover {
-    color: #081227;
+.menu a:hover,
+.menu a.active {
     background: var(--brand);
+    color: #081227;
 }
 
-
+/* 5) Hero (photos left/right, centered name) */
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* centers horizontally */
+    gap: 32px;
+    padding: 72px 0;
     text-align: center;
-    /* centers text inside */
-    padding: 72px 0;
-    flex-direction: column;
-    /* stack items vertically */
+    flex-wrap: nowrap;
+}
+
+.hero-content {
+    max-width: 640px;
 }
 
 .header h1 {
-    font-size: clamp(28px, 5vw, 44px);
     margin: 0;
+    font-size: clamp(28px, 5vw, 44px);
 }
 
 .subtitle {
-    color: var(--muted);
     margin: .25rem 0 1rem;
-}
-
-/* ---------- Hero (was .header) ---------- */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 72px 0;
-}
-
-.header h1 {
-    font-size: clamp(28px, 5vw, 44px);
-    margin: 0;
-}
-
-.subtitle {
     color: var(--muted);
-    margin: .25rem 0 1rem;
 }
 
 .actions {
     display: flex;
-    gap: 12px
+    gap: 12px;
+    justify-content: center;
 }
 
-/* buttons */
+/* Round avatars */
+.avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #1e293b;
+}
+
+/* 6) Buttons */
 .btn {
     display: inline-block;
     padding: 10px 16px;
     border-radius: 12px;
     background: var(--brand);
     color: #081227;
-    text-decoration: none;
     font-weight: 700;
-    box-shadow: 0 8px 24px rgba(96, 165, 250, .25);
+    box-shadow: var(--shadow-brand);
+    transition: transform .06s ease, box-shadow .15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
 }
 
 .btn.ghost {
     background: transparent;
     color: var(--text);
     outline: 1px solid #2b3554;
+    box-shadow: none;
 }
 
 .btn.small {
@@ -143,7 +173,68 @@ body {
     font-weight: 600;
 }
 
-/* contact block */
+/* 7) Sections / Content */
+h2 {
+    font-size: clamp(22px, 3.6vw, 28px);
+    margin: 18px 0 10px;
+}
+
+#about p {
+    line-height: 1.7;
+    color: var(--text);
+}
+
+/* Chips */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+}
+
+.chips li {
+    padding: 8px 12px;
+    background: #0c1733;
+    border: 1px solid #1f2a48;
+    color: #cbd5e1;
+    border-radius: var(--radius-pill);
+    font-size: 14px;
+}
+
+/* Grid + Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid #1c2744;
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+.card h3 {
+    margin: 6px 0 8px;
+}
+
+.card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.meta {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 8px 0 12px;
+}
+
+/* 8) Contact Form */
 .contact {
     display: flex;
     gap: 20px;
@@ -152,7 +243,7 @@ body {
 }
 
 .contact .col {
-    flex: 1 1 320px
+    flex: 1 1 320px;
 }
 
 .form {
@@ -165,11 +256,11 @@ body {
 .form .row {
     display: flex;
     flex-direction: column;
-    gap: 6px
+    gap: 6px;
 }
 
 label {
-    font-weight: 600
+    font-weight: 600;
 }
 
 input,
@@ -184,80 +275,37 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-    color: #8aa0c0
+    color: #8aa0c0;
 }
 
-/* sections & cards */
-h2 {
-    font-size: clamp(22px, 3.6vw, 28px);
-    margin: 18px 0 10px;
-}
-
-#about p {
-    line-height: 1.7;
-    color: var(--text)
-}
-
-.chips {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    gap: 10px;
-    padding: 0;
-    margin: 12px 0;
-}
-
-.chips li {
-    padding: 8px 12px;
-    background: #0c1733;
-    border: 1px solid #1f2a48;
-    color: #cbd5e1;
-    border-radius: 999px;
-    font-size: 14px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-    margin-top: 12px;
-}
-
-.card {
-    background: var(--card);
-    border: 1px solid #1c2744;
-    padding: 16px;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
-}
-
-.card h3 {
-    margin: 6px 0 8px
-}
-
-.card p {
-    color: #cbd5e1;
-    line-height: 1.6
-}
-
-.meta {
-    color: var(--muted);
-    font-size: 13px;
-    margin: 8px 0 12px
-}
-
-/* footer */
+/* 9) Footer */
 .footer {
     padding: 28px 0 60px;
-    color: var(--muted);
     text-align: center;
+    color: var(--muted);
 }
 
-/* responsive */
-@media (max-width:720px) {
+/* 10) Responsive */
+@media (max-width: 720px) {
+    .nav {
+        padding: 12px 0;
+    }
+
     .header {
+        gap: 16px;
         padding: 40px 0;
-        flex-direction: column;
-        align-items: flex-start;
+    }
+
+    .avatar {
+        width: 96px;
+        height: 96px;
+    }
+
+    .hero-content {
+        max-width: 92%;
+    }
+
+    .actions {
+        flex-wrap: wrap;
     }
 }

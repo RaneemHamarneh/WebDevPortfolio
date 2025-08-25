@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Simple Site</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html">MySite</a>
+            <nav class="menu">
+                <a href="index.html">Home</a>
+                <a class="active" href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="split">
+            <div class="col">
+                <h1>About Me</h1>
+                <p>I love learning and building simple, clean web pages. This project demonstrates a basic multi‑page
+                    layout with a responsive design using Flexbox.</p>
+                <p>Skills: HTML, CSS, Python (Django), SQL.</p>
+            </div>
+            <div class="col card">
+                <h3>Highlights</h3>
+                <ul class="bullets">
+                    <li>Beginner‑friendly structure</li>
+                    <li>Reusable CSS components</li>
+                    <li>Accessible form fields</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <small>© <span id="year"></span> MySite</small>
+        </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

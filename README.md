@@ -19,37 +19,12 @@
 
 ---
 
-## 📁 Featured Projects
-
-### 💼 [Project Name 1]
-A Django-based web app for [brief description].  
-**Key Features**: User auth, database operations, REST API integration.  
-**Tech Used**: Django, PostgreSQL, Bootstrap  
-➡️ [GitHub Repo](#)
-
----
-
-### 📊 [Project Name 2]
-Data-driven dashboard using Power BI connected to SQL backend.  
-**Key Features**: Dynamic filters, visual storytelling, KPIs.  
->>> in progress
-
----
-
-### 🔒 [Project Name 3]
-Simple authentication system with Django — login, register, and role-based access.  
->>> in progress
-➡️ [GitHub Repo](#)
-
----
 
 ## 🌱 Currently Learning
 
-- Advanced Django & APIs
+- Django & APIs
 - Frontend integration (React basics)
 - Data structures & algorithms
-- Deploying Django projects on cloud platforms
-
 ---
 
 ## ✨ Soft Skills
